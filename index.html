@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="form">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="inputTitle"
+            placeholder="Product Title"
+            oninput="validateInput(this)"
+          />
+          <label >Product Title</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="inputPrice"
+            placeholder="Product Price"
+            oninput="validateInput(this)"
+          />
+          <label >Product Price</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            list="categories"
+            type="text"
+            class="form-control"
+            id="inputCategory"
+            placeholder="Product Category"
+            oninput="validateInput(this)"
+          />
+          <label >Product Category</label>
+          <datalist id="categories">
+            <option value="Mobile"></option>
+            <option value="TV"></option>
+            <option value="Computer"></option>
+            <option value="Car"></option>
+            <option value="Book"></option>
+          </datalist>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input accept="Image/*" class="form-control" type="file" id="inputImage" oninput="validateInput(this)" />
+          <label  class="form-label">Product Image</label>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="inputDescription"
+            style="height: 100px"
+          ></textarea>
+          <label >Product Description</label>
+        </div>
+        <button id="addButton" class="btn btn-primary mt-3 px-4" onclick="addItem()">
+          Add Item
+        </button>
+        <button id="editButton" itemIndex="2" class="btn btn-success mt-3 px-4 d-none" onclick="updateItem()">
+          Update Item
+        </button>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="searchItem"
+          placeholder="Product Search"
+          oninput="searchItems()"
+        />
+        <label >Product Search</label>
+    </div>
+      <div class="row g-3 py-5" id="items"></div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
